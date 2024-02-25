@@ -10,7 +10,7 @@ from models.state import State
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
 def get_all_states():
     """Docs"""
-    states= []
+    states = []
     for state in storage.all('State').values():
         states.append(state.to_dict())
     return jsonify(states)
@@ -44,10 +44,7 @@ def create_state():
         return jsonify({"error": "Not a JSON"}), 400
     if 'name' not in request.json:
         return jsonify({"error": "Missing name"}), 400
-    
+
     new_state = State(**request.get_json())
     new_state.save()
     return jsonify(new_state.to_dict()), 201
-
-
-
