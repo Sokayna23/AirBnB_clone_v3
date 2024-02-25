@@ -12,7 +12,7 @@ app.register_blueprint(app_views)
 
 @app.teardown_appcontext
 def teardown(self):
-    """ """
+    """Docs"""
     return storage.close()
 
 

@@ -10,5 +10,6 @@ def status_ok():
     """Docs"""
     return jsonify({"status": "OK"})
 
+
 if __name__ == "__main__":
     pass
