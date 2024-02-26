@@ -32,6 +32,7 @@ def delete_state(state_id):
     """Docs"""
     try:
         storage.delete(storage.get('State', state_id))
+        storage.save()
         return jsonify({}), 200
     except Exception as e:
         abort(404)
